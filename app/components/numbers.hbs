@@ -1,0 +1,18 @@
+<h2 style="background-color: {{this.bg}}">Total: {{this.total}}</h2>
+
+
+<p>Given numbers:</p>
+<ul>
+
+  {{#each  this.numbers as |number index|}}
+  <li>
+    {{number}}
+    <button {{action "removeNumber" index }}> Remove</button>
+  </li>
+  {{else}}
+  no number given yet
+  {{/each}}
+</ul>
+<NewNumberInput @onCreate={{this.addNumber}} />
+
+<button {{action "reset"}}>reset</button>

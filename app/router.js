@@ -7,4 +7,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
+  this.route('numbers',{path: "/"}, function() {
+    this.route('remove', {path: '/remove/:id'});
+  });
 });
